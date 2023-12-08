@@ -45,6 +45,9 @@ def Notification(*args, instantiate: bool = False):
 if autoclass('android.os.Build$VERSION').SDK_INT >= 26:
     def NotificationChannel(*args, instantiate: bool = False):
         return _class_call(autoclass("android.app.NotificationChannel"), args, instantiate)
+else:
+    def NotificationChannel(*args, instantiate: bool = False):
+        return None
 
 
 def WallpaperManager(*args, instantiate: bool = False):
